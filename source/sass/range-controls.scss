@@ -1,0 +1,173 @@
+.range-controls {
+  width: 280px;
+  margin-top: 6px;
+
+  @media (min-width: $tablet-width) {
+    width: 220px;
+    margin-left: 8px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 320px;
+    margin-left: 0;
+  }
+}
+
+.range-controls__scale {
+  position: relative;
+
+  display: block;
+  width: inherit;
+  height: 2px;
+  margin-bottom: 36px;
+
+  background-color: $light-grey;
+}
+
+.range-controls__bar {
+  position: absolute;
+  height: 4px;
+  width: 250px;
+
+  background-color: $primary-lighter;
+
+  @media (min-width: $tablet-width) {
+    width: 187px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 285px;
+  }
+}
+
+.range-controls__toggle {
+  position: absolute;
+  top: -10px;
+
+  width: 24px;
+  height: 24px;
+
+  background-color: $color-white;
+  border: 2px solid $primary-lighter;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--max {
+    right: -11px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 1px;
+    right: 1px;
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+    background-color: $color-white;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      background-color: $primary-opacity;
+    }  
+  }
+
+  &:active {
+    &::before {
+    background-color: $color-primary;
+    }
+  }
+
+  &:disabled {
+    background-color: $color-white;
+    border: 2px solid $color-grey;
+    color: $color-grey;
+
+    pointer-events: none;
+  }
+}
+
+input[type=range]:disabled {
+  pointer-events: none;
+}
+
+.range-controls__price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.range-controls__input {
+  width: 110px;
+  height: 35px;
+
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-align: center;
+
+  color: $color-black;
+  border: 2px solid $primary-lighter;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    width: 85px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 127px;
+  }
+
+  &::placeholder {
+    color: $color-grey;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: $primary-darker;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: transparent;
+    border-color: $lightest-grey;
+  }
+}
+
+.range-controls__label {
+  position: relative;
+
+  &--min::after {
+    position: absolute;
+    content: "";
+    top: 16px;
+    right: -20px;
+    width: 9px;
+    height: 2px;
+
+    background-color: $color-grey;
+
+    @media (min-width: $tablet-width) {
+      top: 17px;
+      right: -20px;
+      width: 7px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: -25px;
+      width: 10px;
+    }
+  }
+}
